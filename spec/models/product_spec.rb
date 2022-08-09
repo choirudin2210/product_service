@@ -9,4 +9,10 @@ RSpec.describe Product, type: :model do
   it "is valid with valid attributes" do
     expect(@product).to be_valid
   end
+
+  it "product activate" do
+    @product.active!
+    expect(@product.is_active).to be_truthy
+  end
+
 end
