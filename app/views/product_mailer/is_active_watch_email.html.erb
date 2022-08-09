@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Berikut ini adalah produk yang baru saja Anda tambahkan:</h1>
+    <ol>
+      <li>Nama Produk : <%= @product.name %></li>
+      <li>Harga : <%= @product.price %></li>
+      <li>Kategori : <%= @product.category  %></li>
+      <li>
+        <div class="image">
+
+          <%= image_tag(@product.image.variant(resize_to_fit: [100, 100])) if @product.image.attached? %>
+        </div>
+      </li>
+      <li>Status Aktif : <%= @product.is_active %></li>
+    </ol>
+  </body>
+</html>
